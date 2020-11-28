@@ -1,0 +1,21 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006 {E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/pll_100m.v}
+vlog -vlog01compat -work work +incdir+E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006 {E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/pll_alt_top.v}
+vlog -vlog01compat -work work +incdir+E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006 {E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/freq_div_in_clk.v}
+vlog -vlog01compat -work work +incdir+E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006 {E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/freq_div_in_pul.v}
+vlog -vlog01compat -work work +incdir+E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/db {E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/db/pll_100m_altpll.v}
+
+vlog -vlog01compat -work work +incdir+E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006 {E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/pll_alt_tb.v}
+
+vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclone10lp_ver -L rtl_work -L work -voptargs="+acc"  pll_alt_tb
+
+add wave *
+view structure
+view signals
+run 10 ms

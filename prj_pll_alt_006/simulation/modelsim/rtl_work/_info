@@ -1,0 +1,142 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dE:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/simulation/modelsim
+vfreq_div_in_clk
+Z1 !s110 1592471459
+!i10b 1
+!s100 Ab_C1e>kL5:ff^1[CPac[1
+IBI873d=`o?6W91nRXe^6Q0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1592453899
+8E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/freq_div_in_clk.v
+FE:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/freq_div_in_clk.v
+Z3 L0 21
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1592471459.000000
+!s107 E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/freq_div_in_clk.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006|E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/freq_div_in_clk.v|
+!i113 1
+Z6 o-vlog01compat -work work
+Z7 !s92 -vlog01compat -work work +incdir+E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006
+Z8 tCvgOpt 0
+vfreq_div_in_pul
+R1
+!i10b 1
+!s100 coz>zML05[U>aimmMnc;o0
+If[]Ygf4:<f:9IY_3O8BSj2
+R2
+R0
+w1592453776
+8E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/freq_div_in_pul.v
+FE:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/freq_div_in_pul.v
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/freq_div_in_pul.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006|E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/freq_div_in_pul.v|
+!i113 1
+R6
+R7
+R8
+vpll_100m
+R1
+!i10b 1
+!s100 CF]5z?L[HJi`<2[EXATjk3
+IRZ7N8_1a590m9MXA<l?O:3
+R2
+R0
+w1589270189
+8E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/pll_100m.v
+FE:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/pll_100m.v
+L0 39
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/pll_100m.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006|E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/pll_100m.v|
+!i113 1
+R6
+R7
+R8
+vpll_100m_altpll
+R1
+!i10b 1
+!s100 S`LCP]A8GD:<]<H=SdJM]0
+IhS?IPDfGCOonFAB@QQin@0
+R2
+R0
+w1589271097
+8E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/db/pll_100m_altpll.v
+FE:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/db/pll_100m_altpll.v
+L0 30
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/db/pll_100m_altpll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/db|E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/db/pll_100m_altpll.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work +incdir+E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/db
+R8
+vpll_alt_top
+R1
+!i10b 1
+!s100 PJ5`Em8@Y2X6Q7dJ>09Y02
+I0KXEOk7hd_63RY9@8[I8@2
+R2
+R0
+w1592471443
+8E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/pll_alt_top.v
+FE:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/pll_alt_top.v
+R3
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/pll_alt_top.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006|E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/pll_alt_top.v|
+!i113 1
+R6
+R7
+R8
+vpll_tb
+!s110 1592471460
+!i10b 1
+!s100 =:M@jTA>E9gIh;bg0I9EP0
+I:QooDFYbNe`iVMTX^F>6<0
+R2
+R0
+w1592471240
+8E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/pll_alt_tb.v
+FE:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/pll_alt_tb.v
+L0 3
+R4
+r1
+!s85 0
+31
+!s108 1592471460.000000
+!s107 E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/pll_alt_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006|E:/lessions/lessions_on_net/prog_with_comments/prj_pll_alt_006/pll_alt_tb.v|
+!i113 1
+R6
+R7
+R8

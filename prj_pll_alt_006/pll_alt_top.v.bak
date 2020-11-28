@@ -1,0 +1,94 @@
+`timescale 1ns/1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company:         Beijing ICfusion technology Co.Ltd
+// Website:         http://icfusion.com/
+// Create Date:     24/04/2020
+//
+// Design Name:     weide
+// Target Devices:  PRA006
+// Tool Versions:   Quartus Prime 18.1.0
+//
+// Module Name:     pll_alt_top
+// Project Name:    
+// Description:     
+// 
+// Dependencies: 
+// Revision:
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+module pll_alt_top
+(
+	input	IN_CLK_50M,					//输入时钟，50MHz
+	input	IN_RST_N					//复位信号，低电平有效
+);
+
+parameter		CLK_FREQ_MHZ = 50;		//产生us脉冲信号的输入时钟频率，单位MHz
+parameter		MS_DIV_COEF = 1000;		//产生毫秒脉冲的分频系数
+parameter		S_DIV_COEF = 1000;		//产生秒脉冲的分频系数
+
+reg		pll_rst_n;						//pll复位信号
+wire	locked;							//pll锁定信号
+wire	clk_100m;						//pll模块生成的100MHz时钟信号
+
+wire	us_p;							//微秒脉冲
+wire	ms_p;							//毫秒脉冲
+wire	s_p;							//秒脉冲
+
+assign	rst_n = locked;					//用pll的locked信号产生复位信号
+
+//=======================================================
+//复位信号同步化
+always @ (posedge IN_CLK_50M)
+	pll_rst_n <= IN_RST_N;
+
+//=======================================================
+//产生微秒脉冲信号
+freq_div_in_clk #(
+	.DIV_COEF	(CLK_FREQ_MHZ)
+)
+us_pulse_inst
+(
+	.clk		(IN_CLK_50M),			//输入时钟，50MHz
+	.rst_n		(rst_n),				//复位信号，低电平有效
+	.out_p		(us_p)					//产生微秒脉冲信号
+);
+
+//=======================================================
+//产生毫秒脉冲信号
+freq_div_in_pul #(
+	.DIV_COEF	(MS_DIV_COEF)
+)
+ms_pulse_inst
+(
+	.clk_50m	(IN_CLK_50M),			//输入时钟，50MHz
+	.rst_n		(rst_n),				//复位信号，低电平有效
+	.in_p		(us_p),					//输入微秒脉冲信号
+	.out_p		(ms_p)					//输出毫秒脉冲信号
+);
+
+//=======================================================
+//产生秒脉冲信号
+freq_div_in_pul #(
+	.DIV_COEF	(S_DIV_COEF)
+)
+s_pulse_inst
+(
+	.clk_50m	(IN_CLK_50M),			//输入时钟，50MHz
+	.rst_n		(rst_n),				//复位信号，低电平有效
+	.in_p		(ms_p),					//输入毫秒脉冲信号
+	.out_p		(s_p)					//输出秒脉冲信号
+);
+
+//=======================================================
+//pll模块，用50MHz时钟产生100MHz时钟
+pll_100m	pll_100m_inst 
+(
+	.areset		(~pll_rst_n),
+	.inclk0		(IN_CLK_50M),
+	.c0			(clk_100m),
+	.locked		(locked)
+);
+
+endmodule
